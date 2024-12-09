@@ -46,24 +46,27 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
-    boolean subset = true;
+    boolean subSet = true;
     for (int i = 0; i < str1.length(); i++) {
         char charStr1 = str1.charAt(i);
         for (int j = 0; j < str2.length(); j++) {
              if (charStr1 != str2.charAt(j)) {
-                subset = false; 
+                subSet = false; 
 
             } else {
-                subset = true;
+                subSet = true;
+                String emptyString = "";
+                emptyString += charStr1;
+                str2 = remove(str2, emptyString);
                 break;    
             }
         }
-        if (subset == false) {
+        if (subSet == false) {
             return false;
         }
 
     }
-    return subset;
+    return subSet;
     }
 
     /** Returns a string which is the same as the given string, with a space
