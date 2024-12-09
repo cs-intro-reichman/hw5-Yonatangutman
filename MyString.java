@@ -47,6 +47,10 @@ public class MyString {
      */
     public static boolean subsetOf(String str1, String str2) {
     boolean subSet = true;
+    if (str2 == "") {
+        return false;  
+    }
+
     for (int i = 0; i < str1.length(); i++) {
         char charStr1 = str1.charAt(i);
         for (int j = 0; j < str2.length(); j++) {
@@ -101,11 +105,12 @@ public class MyString {
      * @return a randomly generated string, consisting of 'n' lowercase letters
      */
     public static String randomStringOfLetters(int n) {
-            char[] result = new char[n];
+            String result = "";
             for (int i = 0; i < n; i++) {
-                result[i] = (char) ('a' + (int)(Math.random() * 26));
+                char charRandom = (char) ('a' + (int)(Math.random() * 26));
+                result += charRandom;
             }
-            return new String(result);
+            return result;
     }
 
     /**
