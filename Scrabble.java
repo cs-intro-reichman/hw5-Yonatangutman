@@ -119,7 +119,7 @@ public class Scrabble {
 				int currentScore = wordScore(input);
 				score += currentScore;
 				System.out.println(input + " earned " + currentScore + " points. Scores: " + score + " points\n");
-				MyString.remove(hand, input);
+				hand = MyString.remove(hand, input);
  				} else {
 				  System.out.println("Invalid word. Try again.");	
 				}
