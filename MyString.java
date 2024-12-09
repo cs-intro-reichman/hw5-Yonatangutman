@@ -47,7 +47,7 @@ public class MyString {
      */
     public static boolean subsetOf(String str1, String str2) {
     boolean subSet = true;
-    if (str2 == "") {
+    if (str2.equals("")) {
         return false;  
     }
 

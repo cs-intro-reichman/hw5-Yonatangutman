@@ -48,11 +48,11 @@ public class Scrabble {
 
 	// Checks if the given word is in the dictionary.
 	public static boolean isWordInDictionary(String word) {
-	if (word=="") {
+	if (word.equals("")) {
 		return false;
 	}
 	for (int i = 0; i <DICTIONARY.length ; i++) {
-		if (word == DICTIONARY[i]) {
+		if (word.equals(DICTIONARY[i])) {
 			return true;	
 		}
 		
@@ -112,7 +112,7 @@ public class Scrabble {
 			// non-whitespace characters. Whitespace is either space characters, or  
 			// end-of-line characters.
 			String input = in.readString(); 
-			if (input == ".") {
+			if (input.equals(".")) {
 				break;	
 			} else {
 				if (MyString.subsetOf(input, hand) && isWordInDictionary(input)) {
@@ -148,10 +148,10 @@ public class Scrabble {
 			// Gets the user's input, which is all the characters entered by 
 			// the user until the user enter the ENTER character.
 			String input = in.readString();
-			if (input == "n") {
+			if (input.equals("n")) {
 				String newHand = createHand();
 				playHand(newHand);	
-			} else if (input == "e") {
+			} else if (input.equals("e")) {
 				break;
 				
 			}
